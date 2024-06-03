@@ -1,0 +1,243 @@
+@font-face {
+    font-family: Roboto;
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+body{
+    font-size: 16px;
+    color: #2b283a;
+    font-family: Roboto;
+    margin: 0;
+    /* 2 x body's font-size 16 */
+    line-height: 2;
+}
+
+/* typeography */
+
+h1{
+    color: whitesmoke;
+    /* 18/16 = 1.75 */
+    font-size: 1.75rem; 
+    margin: 0;
+}
+
+h2 {
+    margin-top: 0;
+    font-size: 1.375rem;
+}
+
+h3{
+    color: #d0aaff;
+    /* 20/16 = 1.25 */
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+p {
+    /* 直接输入1.5 确保无论font-size是多少 都是它的1.5倍 */
+    line-height: 1.5;
+}
+
+.subheading {
+    display: block;
+    font-size: 1rem; /* 20 / 16 = 1.25 */
+    color: #d0aaff;
+}
+
+/* links */
+
+a {
+    color: #ef5839;
+    text-decoration: underline dotted;
+}
+
+a:hover {
+    color: #d4b44c;
+}
+
+a:active {
+    color: #d4b44c;
+}
+
+.btn {
+    font-size: 1.125rem; /* 18px */
+    display: block;
+    text-align: center;
+    padding: 0.5em 1em;
+    border-radius: 4.6px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+.btn:hover, 
+.btn:active{
+    background-color: #f3e885;
+    color: #2b238a;
+}
+
+.btn-dark{
+    background: #5f29a3;
+    color: whitesmoke
+}
+
+.btn-mid{
+    background: #F0E0FF; 
+    color: #5f29a3; 
+}
+
+.btn-light{
+    background: whitesmoke;
+    color: #5f29a3; 
+}
+ 
+
+
+/* layout */
+
+header, 
+section, 
+footer {
+    /* 20px */
+    padding: 1.25em 0;
+}
+
+header, 
+.section-two {
+    background-color: #5f29a3;
+}
+
+.section-two{
+    color: whitesmoke;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 800px;
+    /* border: 3px solid red; */
+}
+
+.main-image {
+    /* Make it so this image takes up 100% of the section width. */
+    width: 100%;
+    max-width: 640px;
+
+    /* min-width不那么常用 */
+    /* min-width: 300px; */
+    /* 为了居中 左右margin为auto */
+
+    margin: 0 auto 2em; /* margin: 0 auto 32px; */
+    /* 因为图片的默认display是inline 而inline不具备显示margin的条件 所以要让margin起效要设置成block */
+    display: block;
+    /* border: 3px solid yellow; */
+
+}
+
+.feature-image {
+    width: 100%;
+    border-radius: 4.6px;
+    margin-bottom: 1em;
+}
+
+.section-two-image-container {
+    justify-content: space-between;
+}
+
+footer {
+    text-align: center;
+    color: #5f29a3;
+}
+
+/* ----- NAVIGATION ----- */
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    /* anchor是一个inline element */
+    display: block;
+    font-size: 1.125rem;
+    padding: 0.85em 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (min-width: 480px) {
+    .section-two-image-container {
+        display: flex;
+        flex-direction: row;
+    }
+    .feature-image {
+        /* 两图responsive一般是各50% */
+        /* 确保两个并列图之中的gap */
+        width: 48.8%;
+    }
+}
+
+/* navigation里特殊的部分比如导航栏上方的margin 对齐属性 和分隔栏出现在这里 */
+@media (max-width: 767px) {
+    header {
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 1.5em;
+    }  
+
+    /* 给ul里除了最后一个li 都加上一个下border */
+    li:not(:last-child) {
+        border-bottom: 1px dotted #a190b6;
+    }  
+}
+
+/* 稍大一点的屏幕区间之间间距需要更大 */
+@media (min-width: 768px) {
+    header,
+    section,
+    footer {
+        /* padding: 45px 0; */
+        padding: 2.875em 0;        
+    }
+
+    .btn {
+        display: inline-block;
+        margin-right: 0.5em;
+    }
+
+    h1 {
+        font-size: 2.25rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .subheading {
+        font-size: 1.25rem;
+    }
+    
+    p {
+        font-size: 1.125rem;
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    li {
+        margin: 0 1rem;
+    }
+}
